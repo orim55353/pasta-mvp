@@ -1,0 +1,98 @@
+.tableDish {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  margin: 30px 50px;
+  position: relative;
+  margin-bottom: 0;
+
+  &:last-child {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 20px 10px 0px 0px;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-self: center;
+    width: 20%;
+    grid-gap: 25%;
+    margin-right: 2%;
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 0px;
+      width: 15%;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 45%;
+
+    .rating {
+      font-size: large;
+      margin-right: 10px;
+      position: absolute;
+      bottom: 10px;
+
+      @media screen and (max-width: 600px) {
+        font-size: medium;
+      }
+    }
+
+    span {
+      color: white;
+      direction: rtl;
+      width: 95%;
+      margin-right: 10px;
+
+      &.name {
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+
+        @media screen and (max-width: 600px) {
+          font-size: 20px;
+        }
+      }
+
+      &.description {
+        margin-top: 5px;
+        font-size: 17px;
+
+        @media screen and (max-width: 600px) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  span {
+    color: white;
+    direction: rtl;
+
+    &.price {
+      margin: 0px 20px;
+      position: absolute;
+      left: 50px;
+      font-size: 27px;
+
+      @media screen and (max-width: 600px) {
+        left: 0px;
+      }
+    }
+  }
+}
