@@ -1,0 +1,17 @@
+// .dishesContainer {
+//   .overlay {
+//     z-index: 1;
+//     top: 0px;
+//     left: 0px;
+//     background: rgba(0, 0, 0, 0.7); /*can be anything, of course*/
+//   }
+//   background-image: url("../../Assets/salad.jpg");
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   margin-bottom: -20px;
+// }
+
+.dish {
+  cursor: pointer;
+}

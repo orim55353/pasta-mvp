@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-start;
-  margin: 30px 50px;
+  margin: 30px 70px 0px 20px;
   position: relative;
   margin-bottom: 0;
 
   &:last-child {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   @media screen and (max-width: 600px) {
@@ -19,6 +19,11 @@
     height: 150px;
     border-radius: 10px;
     object-fit: cover;
+
+    @media screen and (max-width: 600px) {
+      width: 18vh;
+      height: 18vh;
+    }
   }
 
   .stats {
@@ -28,11 +33,16 @@
     width: 20%;
     grid-gap: 25%;
     margin-right: 2%;
+    font-size: 2vw;
 
     @media screen and (max-width: 600px) {
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 0px;
       width: 15%;
+      font-size: 4vw;
+      position: absolute;
+      left: 0;
+      bottom: 25%;
     }
   }
 
@@ -46,10 +56,14 @@
       font-size: large;
       margin-right: 10px;
       position: absolute;
-      bottom: 10px;
+      bottom: 0;
+
+      span {
+        margin: 1mm;
+      }
 
       @media screen and (max-width: 600px) {
-        font-size: medium;
+        font-size: 3vw;
       }
     }
 
@@ -60,21 +74,22 @@
       margin-right: 10px;
 
       &.name {
-        font-size: 25px;
+        font-size: 2.5vw;
         font-weight: bold;
         text-decoration: underline;
 
         @media screen and (max-width: 600px) {
-          font-size: 20px;
+          font-size: 6vw;
         }
       }
 
       &.description {
         margin-top: 5px;
-        font-size: 17px;
+        font-size: 1.7vw;
+        margin-bottom: 13px;
 
         @media screen and (max-width: 600px) {
-          font-size: 15px;
+          font-size: 4vw;
         }
       }
     }
@@ -85,13 +100,14 @@
     direction: rtl;
 
     &.price {
-      margin: 0px 20px;
-      position: absolute;
-      left: 50px;
+      margin: 0px 5px;
       font-size: 27px;
+      position: absolute;
+      left: 10%;
 
       @media screen and (max-width: 600px) {
-        left: 0px;
+        font-size: 7vw;
+        left: 0;
       }
     }
   }

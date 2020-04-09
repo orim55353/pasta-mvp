@@ -40,7 +40,7 @@
 
       &.category {
         font-size: 55px;
-        margin: -5px 5px -5px 0px;
+        margin: -5px 5px -2px 0px;
         text-shadow: 1px 1px black;
 
         @media screen and (max-width: 600px) {
@@ -54,7 +54,7 @@
         line-height: 18px;
 
         @media screen and (max-width: 600px) {
-          font-size: 17px;
+          font-size: 5vw;
           margin: 0px 10px 20px 20px;
         }
       }

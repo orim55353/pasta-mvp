@@ -22,5 +22,9 @@
     color: white;
     font-size: 100px;
     text-shadow: 1px 1px black;
+
+    @media screen and (max-width: 600px) {
+      font-size: 20vw;
+    }
   }
 }
