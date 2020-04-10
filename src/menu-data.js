@@ -2,7 +2,7 @@ const MENU_DATA = [
   {
     id: 1,
     title: "ראשונות",
-    img: "../../Assets/starters_bg.png",
+    img: "/starters_bg.png",
     categories: [
       {
         id: 1,
@@ -15,7 +15,7 @@ const MENU_DATA = [
             name: "מנת אנטי פסטי",
             description:
               "מגוון ירקות קלויים לצד פוקאצ׳ה קלאסית הנאפת בתנור אבן איטלקי",
-            image: "../../Assets/starters_bg.png",
+            imageUrl: "/starters_bg.png",
             price: 25,
             rating: 4.2,
           },
@@ -24,7 +24,7 @@ const MENU_DATA = [
             name: "מאפה לוקו מלוח",
             description:
               "מאפה במילוי גבינות וירקות קלויים לצד רוטב עגבניות, נאפה בתנור אבן איטלקי.",
-            imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+            imageUrl: "/starters_bg.png",
             price: 25,
             rating: 4.2,
           },
@@ -33,7 +33,7 @@ const MENU_DATA = [
             name: "פולנטה",
             description:
               "עם פטריות, עגבניות שרי, פרמז׳ן ושמן כמהין, יוצא חם חם מהתנור.",
-            imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+            imageUrl: "/starters_bg.png",
             price: 42,
             rating: 4.2,
           },
@@ -50,7 +50,7 @@ const MENU_DATA = [
             name: "קאלצונה עגבניות",
             description:
               "קאלצונה במילוי רוטב עגבניות וגבינת מוצרלה, מאפה חמים וטעים הנאפה בתנור אבן איטלקי מסורתי.",
-            image: "../../Assets/starters_bg.png",
+            imageUrl: "/starters_bg.png",
             price: 18,
             rating: 4.2,
           },
@@ -59,7 +59,7 @@ const MENU_DATA = [
             name: "קאלצונה תרד וגבינות",
             description:
               "קאלצונה במילוי רוטב עגבניות ותרד , מאפה חמים וטעים הנאפה בתנור אבן איטלקי מסורתי.",
-            imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+            imageUrl: "/starters_bg.png",
             price: 18,
             rating: 4.2,
           },
@@ -75,7 +75,7 @@ const MENU_DATA = [
             name: "פוקאצ׳ה אנטי פסטי",
             description:
               "פוקאצ׳ה עם פלפל קלוי, חציל קלוי וגבינת פטה, נאפת בתנור אבן איטלקי.",
-            image: "../../Assets/starters_bg.png",
+            imageUrl: "/starters_bg.png",
             price: 18,
             rating: 4.2,
           },
@@ -84,7 +84,7 @@ const MENU_DATA = [
             name: "פוקאצ׳ה קלאסית",
             description:
               "פוקאצ׳ה עם אליו אוליו שמן זית, מלח ופלפל גרוס, נאפת בתנור אבן איטלקי. *מוגשת בליווי מתבלים",
-            imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+            imageUrl: "/starters_bg.png",
             price: 15,
             rating: 4.2,
           },
@@ -93,7 +93,7 @@ const MENU_DATA = [
             name: "פוקאצ׳ה שרי",
             description:
               "פוקאצ׳ה עם פסטו, מוצרלה ועגבניות שרי, מבצק עבודת יד שאנחנו מכינים כאן במקום, נאפת בתנור אבן איטלקי.",
-            imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+            imageUrl: "/starters_bg.png",
             price: 18,
             rating: 4.2,
           },
@@ -102,7 +102,7 @@ const MENU_DATA = [
             name: "פוקאצ׳ה גבינה כחולה",
             description:
               "פוקאצ׳ה עם קוביות בטטה, בצל וגבינה כחולה, נאפת בתנור אבן איטלקי.",
-            imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+            imageUrl: "/starters_bg.png",
             price: 18,
             rating: 4.2,
           },
@@ -113,7 +113,7 @@ const MENU_DATA = [
   {
     id: 2,
     title: "סלטים",
-    img: "../../Assets/salad.jpg",
+    img: "/salad.jpg",
     categories: [
       {
         id: -1,
@@ -125,7 +125,7 @@ const MENU_DATA = [
             name: "סלט קפרזה",
             description:
               "סלט שמקורו בחבל קמפניה, עם עגבניות חממה, מגוון עגבניות שרי, גבינת מוצרלה פרסקה, פסטו, חומץ בלסמי, בזיליקום, שום וקרוטונים.",
-            image: "../../Assets/starters_bg.png",
+            imageUrl: "/salad.jpg",
             price: 32,
             rating: 4.2,
           },
@@ -134,7 +134,7 @@ const MENU_DATA = [
             name: "סלט פנצנלה",
             description:
               "סלט איטלקי עשיר, אשר מקורו בעיר פירנצה שבטוסקנה. מגוון ירקות, גבינת פטה וקרוטונים. רוטב ווינגרט על בסיס שמן זית ולימון.",
-            image: "../../Assets/starters_bg.png",
+            imageUrl: "/salad.jpg",
             price: 25,
             rating: 4.2,
           },
@@ -143,7 +143,7 @@ const MENU_DATA = [
             name: "סלט פסטה קר",
             description:
               "פסטה, עגבניות מיובשות, שעועית ירוקה, גבינת פטה, עשבי תיבול, זיתים ירוקים, סלרי, בצל ירוק + סגול, רוטב ווינגרט על בסיס שמן זית ולימון.",
-            imageUrl: "/images/salad.jpg",
+            imageUrl: "/salad.jpg",
             price: 30,
             rating: 4.2,
           },
@@ -152,9 +152,77 @@ const MENU_DATA = [
             name: "סלט קינואה",
             description:
               "סלט עם קוביות בטטה, חמוציות, עשבי תיבול, בצל סגול, גרעיני דלעת ווינגרט הדרים.",
-            imageUrl: "/images/salad.jpg",
+            imageUrl: "/salad.jpg",
             price: 37,
             rating: 4.2,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: -1,
+    title: "פסטה",
+    img: "/pasta_2.jpg",
+    categories: [
+      {
+        id: 1,
+        name: "",
+        description: "",
+        pastas: [
+          {
+            id: 1,
+            name: "פנה טריו",
+            imageUrl: "/pene.png",
+            price: 0,
+          },
+          {
+            id: 2,
+            name: "בלרינה",
+            imageUrl: "/balerina.png",
+            price: 0,
+          },
+          {
+            id: 3,
+            name: "ספגטי",
+            imageUrl: "/spageti.png",
+            price: 0,
+          },
+          {
+            id: 4,
+            name: "פטוצ׳יני",
+            imageUrl: "/fatochini.png",
+            price: 0,
+          },
+          {
+            id: 5,
+            name: "ניוקי תפו״א",
+            imageUrl: "/balerina.png",
+            price: 4,
+          },
+          {
+            id: 5,
+            name: "דואט ניוקי",
+            imageUrl: "/balerina.png",
+            price: 6,
+          },
+          {
+            id: 6,
+            name: "רביולי גבינות / בטטה",
+            imageUrl: "/ravioli.png",
+            price: 10,
+          },
+          {
+            id: 7,
+            name: "מיקס רביולי",
+            imageUrl: "/ravioli.png",
+            price: 10,
+          },
+          {
+            id: 8,
+            name: "ניוקי / פסטה ללא גלוטן",
+            imageUrl: "/pene.png",
+            price: 5,
           },
         ],
       },

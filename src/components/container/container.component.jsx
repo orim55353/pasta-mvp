@@ -5,6 +5,9 @@ import "./container.styles.scss";
 
 import Cateogry from "../category/category.component";
 import Dish from "../dish/dish.component";
+import PastaContainer from "../pasta-container/pasta-container.component";
+
+import DishData from "../../model/dish";
 
 class Container extends React.Component {
   constructor(props) {
@@ -12,27 +15,44 @@ class Container extends React.Component {
 
     this.state = {
       data: props.data,
-      selectedDish: "no",
+      selectedDish: null,
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleCloseDish = this.handleCloseDish.bind(this);
   }
 
-  handleClick() {
-    this.setState({ selectedDish: "yes" });
+  handleClick(dishProps) {
+    var dishData = null;
+    Object.values(dishProps).map((data) => {
+      dishData = new DishData(
+        data["name"],
+        data["description"],
+        data["price"],
+        data["rating"],
+        data["imageUrl"]
+      );
+
+      return null;
+    });
+
+    this.setState({ selectedDish: dishData });
     document.querySelector("body").style.overflow = "hidden";
   }
 
   handleCloseDish() {
-    this.setState({ selectedDish: "no" });
+    this.setState({ selectedDish: null });
+    document.querySelector("body").style.overflow = "visible";
   }
 
   render() {
     return (
       <div className="container">
-        {this.state.selectedDish === "yes" && (
-          <Dish closeDish={this.handleCloseDish}></Dish>
+        {this.state.selectedDish !== null && (
+          <Dish
+            dishData={this.state.selectedDish}
+            closeDish={this.handleCloseDish}
+          ></Dish>
         )}
         <div className="topImage">
           <img className="logo" src={logo} alt="logo" />
@@ -46,9 +66,20 @@ class Container extends React.Component {
           </p>
         </div>
         <div className="menu">
-          {this.state.data.map(({ ...props }) => (
+          {this.state.data.map(({ categories, id, ...props }) => (
             <div>
-              <Cateogry onClick={this.handleClick} {...props}></Cateogry>
+              {id === -1 ? (
+                <PastaContainer
+                  {...props}
+                  pastas={categories[0].pastas}
+                ></PastaContainer>
+              ) : (
+                <Cateogry
+                  onClick={this.handleClick}
+                  {...props}
+                  categories={categories}
+                ></Cateogry>
+              )}
             </div>
           ))}
         </div>

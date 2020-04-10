@@ -1,0 +1,38 @@
+.pastaKind {
+  display: flex;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 20vw;
+  height: 8vw;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 5px;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 25%;
+    height: auto;
+    margin-left: 10px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5px;
+    text-align: center;
+
+    span {
+      text-shadow: 1px 1px black;
+      color: white;
+      font-size: 2.4vw;
+      font-family: "SecelyMF";
+      line-height: 35px;
+    }
+  }
+}

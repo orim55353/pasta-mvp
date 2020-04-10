@@ -1,9 +1,7 @@
 import React from "react";
+import Fade from "react-reveal/Fade";
 
 import Title from "../title/title.component";
-
-import startersBg from "../../Assets/starters_bg.png";
-import fukacha from "../../Assets/fukacha.png";
 
 import CategoryTab from "../misc/category-tab/category-tab.component";
 import TableDish from "../table-dish/table-dish.component";
@@ -16,7 +14,7 @@ class Category extends React.Component {
 
     this.state = {
       name: this.props.title,
-      img: startersBg,
+      img: this.props.img,
       categories: this.props.categories,
       handleClick: this.props.onClick,
     };
@@ -25,24 +23,31 @@ class Category extends React.Component {
   render() {
     return (
       <div className="category">
-        <Title title={this.state.name} img={this.state.img}></Title>
+        <Fade>
+          <Title title={this.state.name} img={this.state.img}></Title>
+        </Fade>
         {this.state.categories.map(({ name, description, dishes, id }) => (
           <div className="dishesContainer">
-            <div className="overlay">
-              {id !== -1 ? (
+            {id !== -1 ? (
+              <Fade>
                 <CategoryTab
                   name={name}
                   description={description}
                   className="tab"
                   direction={`${id % 2 === 0 ? "left" : "right"}`}
                 ></CategoryTab>
-              ) : null}
-              {dishes.map(({ ...dishProps }) => (
-                <div className="dish" onClick={this.state.handleClick}>
-                  <TableDish img={fukacha} {...dishProps} onC></TableDish>
+              </Fade>
+            ) : null}
+            {dishes.map(({ ...dishProps }) => (
+              <Fade>
+                <div
+                  className="dish"
+                  onClick={() => this.state.handleClick({ dishProps })}
+                >
+                  <TableDish {...dishProps}></TableDish>
                 </div>
-              ))}
-            </div>
+              </Fade>
+            ))}
           </div>
         ))}
       </div>

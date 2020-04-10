@@ -4,7 +4,7 @@ import "./title.styles.scss";
 
 const Title = ({ title, img }) => (
   <div className="title">
-    <img className="title" src={img} alt="logo"></img>
+    <img className="title" src={"../../Assets" + img} alt=""></img>
     <span>{title}</span>
   </div>
 );

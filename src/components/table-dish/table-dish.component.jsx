@@ -1,9 +1,9 @@
 import React from "react";
 import "./table-dish.styles.scss";
 
-const TableDish = ({ img, name, description, price }) => (
+const TableDish = ({ imageUrl, img, name, description, price }) => (
   <div className="tableDish">
-    <img src={img} alt="dish"></img>
+    <img src={"../../Assets" + imageUrl} alt="dish"></img>
     <div className="text">
       <span className="name">{name}</span>
       <span className="description">{description}</span>
