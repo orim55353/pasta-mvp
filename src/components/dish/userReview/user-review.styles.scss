@@ -11,5 +11,10 @@
     margin: 10px 20px 0px 0px;
 
     border-radius: 10px;
+
+    @media screen and (max-width: 600px) {
+      height: 50%;
+      width: 35%;
+    }
   }
 }
