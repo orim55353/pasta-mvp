@@ -15,11 +15,11 @@ const PastContainer = ({ title, pastas, img }) => (
         <span className="description">בוחרים את סוג הפסטה</span>
       </div>
       <div className="pastaContainer">
-        {/* {pastas.map(({ ...props }) => (
+        {pastas.map(({ ...props }) => (
           <div>
             <PastaKind {...props}></PastaKind>
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   </Fade>
