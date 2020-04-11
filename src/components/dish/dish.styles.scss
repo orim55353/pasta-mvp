@@ -77,6 +77,20 @@
         margin: 20px;
         z-index: 2;
 
+        &.white {
+          display: inline;
+          @media screen and (max-width: 600px) {
+            display: none;
+          }
+        }
+
+        &.black {
+          display: none;
+          @media screen and (max-width: 600px) {
+            display: inline;
+          }
+        }
+
         @media screen and (max-width: 600px) {
           height: 15px;
           width: 15px;

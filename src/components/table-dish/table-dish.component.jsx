@@ -1,7 +1,7 @@
 import React from "react";
 import "./table-dish.styles.scss";
 
-const TableDish = ({ imageUrl, img, name, description, price }) => (
+const TableDish = ({ imageUrl, name, description, price }) => (
   <div className="tableDish">
     <img src={"../../Assets" + imageUrl} alt="dish"></img>
     <div className="text">

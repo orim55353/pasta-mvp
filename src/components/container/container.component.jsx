@@ -5,7 +5,9 @@ import "./container.styles.scss";
 
 import Cateogry from "../category/category.component";
 import Dish from "../dish/dish.component";
+
 import PastaContainer from "../pasta-container/pasta-container.component";
+import SauceSelection from "../sauce-selection/sauce-selection.component";
 
 import DishData from "../../model/dish";
 
@@ -16,10 +18,12 @@ class Container extends React.Component {
     this.state = {
       data: props.data,
       selectedDish: null,
+      selectedPasta: 0,
     };
 
     this.handleClick = this.handleClick.bind(this);
-    this.handleCloseDish = this.handleCloseDish.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handlePastaClick = this.handlePastaClick.bind(this);
   }
 
   handleClick(dishProps) {
@@ -40,9 +44,19 @@ class Container extends React.Component {
     document.querySelector("body").style.overflow = "hidden";
   }
 
-  handleCloseDish() {
-    this.setState({ selectedDish: null });
+  handleClose() {
+    console.log(this.state);
+    if (this.state.selectedDish !== null) {
+      this.setState({ selectedDish: null });
+    } else {
+      this.setState({ selectedPasta: 0 });
+    }
     document.querySelector("body").style.overflow = "visible";
+  }
+
+  handlePastaClick(pastaId) {
+    this.setState({ selectedPasta: pastaId });
+    document.querySelector("body").style.overflow = "hidden";
   }
 
   render() {
@@ -51,9 +65,14 @@ class Container extends React.Component {
         {this.state.selectedDish !== null && (
           <Dish
             dishData={this.state.selectedDish}
-            closeDish={this.handleCloseDish}
+            closeDish={this.handleClose}
           ></Dish>
         )}
+
+        {this.state.selectedPasta !== 0 && (
+          <SauceSelection handleClose={this.handleClose}></SauceSelection>
+        )}
+
         <div className="topImage">
           <img className="logo" src={logo} alt="logo" />
         </div>
@@ -70,6 +89,7 @@ class Container extends React.Component {
             <div>
               {id === -1 ? (
                 <PastaContainer
+                  onClick={this.handlePastaClick}
                   {...props}
                   pastas={categories[0].pastas}
                 ></PastaContainer>

@@ -1,0 +1,97 @@
+.sauceContainer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  display: flex;
+  justify-content: center;
+
+  .sauceSelection {
+    width: 95%;
+    height: 95%;
+    z-index: 1;
+
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid white;
+
+    background-image: url(../../Assets/chalk_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .closeSelection {
+      background-color: transparent;
+      border: none;
+      height: 20px;
+      width: 20px;
+      margin: 20px;
+      z-index: 2;
+      position: absolute;
+
+      @media screen and (max-width: 600px) {
+        height: 15px;
+        width: 15px;
+        margin: 10px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 10px 20px;
+      margin-bottom: 0px;
+
+      span {
+        color: white;
+        margin-left: 20px;
+        margin-top: 10px;
+        text-shadow: 1px 1px black;
+
+        @media screen and (max-width: 600px) {
+          font-size: 7vw;
+          margin-top: 0px;
+          margin-bottom: 10px;
+        }
+
+        &.description {
+          color: #f69d29;
+          font-family: "SecelyMF";
+          font-size: 3vw;
+        }
+
+        &.step {
+          width: 50px;
+          height: 50px;
+          font-size: 3.5vw;
+
+          @media screen and (max-width: 600px) {
+            font-size: 10vw;
+          }
+
+          border: 2px solid #f69d29;
+          border-radius: 50%;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

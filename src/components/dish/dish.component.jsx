@@ -3,7 +3,8 @@ import Fade from "react-reveal/Fade";
 
 import "./dish.styles.scss";
 
-import close from "../../Assets/close_white.png";
+import closeWhite from "../../Assets/close_white.png";
+import closeBlack from "../../Assets/close_black.png";
 
 import UserReview from "./userReview/user-review.component";
 
@@ -14,8 +15,14 @@ const Dish = ({ closeDish, dishData }) => (
         <div className="display">
           <img
             onClick={closeDish}
-            className="closeDish"
-            src={close}
+            className="closeDish white"
+            src={closeWhite}
+            alt="close"
+          ></img>
+          <img
+            onClick={closeDish}
+            className="closeDish black"
+            src={closeBlack}
             alt="close"
           ></img>
           <div className="info">
