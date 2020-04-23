@@ -11,6 +11,11 @@ body {
     url(./Assets/fonts/RiflexRegular.TTF) format("truetype");
 }
 
+@font-face {
+  font-family: Secely;
+  src: local("SecelyMF"), url(./Assets/fonts/secelyrg.TTF) format("truetype");
+}
+
 * {
   font-family: RiflexRegualr;
 }
