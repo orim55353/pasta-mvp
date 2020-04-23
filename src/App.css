@@ -5,6 +5,12 @@ body {
   background-attachment: fixed;
 }
 
+@font-face {
+  font-family: RiflexRegualr;
+  src: local("RiflexRegular"),
+    url(./Assets/fonts/RiflexRegular.TTF) format("truetype");
+}
+
 * {
-  font-family: "Riflex";
+  font-family: RiflexRegualr;
 }

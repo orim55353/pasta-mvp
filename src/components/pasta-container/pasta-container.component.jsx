@@ -32,9 +32,7 @@ class PastContainer extends React.Component {
           </div>
           <div className="pastaContainer">
             {this.props.pastas.map(({ id, ...props }) => (
-              <div
-                onClick={() => this.handleClick(id) /*() => onClick({ id })*/}
-              >
+              <div onClick={() => this.handleClick(id)}>
                 <PastaKind
                   {...props}
                   id={id}
@@ -53,8 +51,5 @@ class PastContainer extends React.Component {
     );
   }
 }
-
-// const PastContainer = ({ title, pastas, img, onClick }) => (
-// );
 
 export default PastContainer;

@@ -7,7 +7,6 @@ import Cateogry from "../category/category.component";
 import Dish from "../dish/dish.component";
 
 import PastaContainer from "../pasta-container/pasta-container.component";
-import SauceSelection from "../sauce-selection/sauce-selection.component";
 
 import DishData from "../../model/dish";
 
@@ -23,7 +22,6 @@ class Container extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    this.handlePastaClick = this.handlePastaClick.bind(this);
   }
 
   handleClick(dishProps) {
@@ -45,18 +43,8 @@ class Container extends React.Component {
   }
 
   handleClose() {
-    console.log(this.state);
-    if (this.state.selectedDish !== null) {
-      this.setState({ selectedDish: null });
-    } else {
-      this.setState({ selectedPasta: 0 });
-    }
+    this.setState({ selectedDish: null });
     document.querySelector("body").style.overflow = "visible";
-  }
-
-  handlePastaClick(pastaId) {
-    this.setState({ selectedPasta: pastaId });
-    document.querySelector("body").style.overflow = "hidden";
   }
 
   render() {
@@ -67,10 +55,6 @@ class Container extends React.Component {
             dishData={this.state.selectedDish}
             closeDish={this.handleClose}
           ></Dish>
-        )}
-
-        {this.state.selectedPasta !== 0 && (
-          <SauceSelection handleClose={this.handleClose}></SauceSelection>
         )}
 
         <div className="topImage">
