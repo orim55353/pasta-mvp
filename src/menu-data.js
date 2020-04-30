@@ -225,6 +225,17 @@ const MENU_DATA = [
             price: 5,
           },
         ],
+        sauces: [
+          {
+            id: 1,
+            name: "סלט קינואה",
+            description:
+              "סלט עם קוביות בטטה, חמוציות, עשבי תיבול, בצל סגול, גרעיני דלעת ווינגרט הדרים.",
+            imageUrl: "/salad.jpg",
+            price: 37,
+            rating: 4.2,
+          },
+        ],
       },
     ],
   },

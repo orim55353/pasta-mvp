@@ -5,7 +5,6 @@ import "./pasta-container.styles.scss";
 
 import Title from "../title/title.component";
 import PastaKind from "../pasta-kind/pasta-kind.component";
-import TableDish from "../table-dish/table-dish.component";
 
 class PastContainer extends React.Component {
   constructor(props) {
@@ -41,11 +40,6 @@ class PastContainer extends React.Component {
               </div>
             ))}
           </div>
-          <div className="info">
-            <span className="step">2</span>
-            <span className="description">בוחרים את הרוטב</span>
-          </div>
-          <TableDish></TableDish>
         </div>
       </Fade>
     );

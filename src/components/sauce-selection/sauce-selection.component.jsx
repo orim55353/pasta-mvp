@@ -1,25 +1,23 @@
 import React from "react";
 
 import "./sauce-selection.styles.scss";
-import closeWhite from "../../Assets/close_white.png";
 
 import Fade from "react-reveal/Fade";
+import TableDish from "../table-dish/table-dish.component";
 
-const SauceSelection = ({ handleClose }) => (
+const SauceSelection = ({ sauces, onClick }) => (
   <Fade>
     <div className="sauceContainer">
-      <div className="sauceSelection">
-        <img
-          onClick={handleClose}
-          className="closeSelection white"
-          src={closeWhite}
-          alt="close"
-        ></img>
-
-        <div className="info">
-          <span className="step">2</span>
-          <span className="description">בוחרים את הרוטב</span>
-        </div>
+      <div className="info">
+        <span className="step">2</span>
+        <span className="description">בוחרים את הרוטב</span>
+      </div>
+      <div className="data">
+        {sauces.map(({ ...dishProps }) => (
+          <div className="sauce" onClick={() => onClick({ dishProps })}>
+            <TableDish {...dishProps}></TableDish>
+          </div>
+        ))}
       </div>
     </div>
   </Fade>

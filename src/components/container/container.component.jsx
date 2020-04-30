@@ -5,9 +5,9 @@ import "./container.styles.scss";
 
 import Cateogry from "../category/category.component";
 import Dish from "../dish/dish.component";
-
 import PastaContainer from "../pasta-container/pasta-container.component";
-
+import SauceSelection from "../sauce-selection/sauce-selection.component";
+import BottomControls from "../bottom-controls/bottom-controls.component";
 import DishData from "../../model/dish";
 
 class Container extends React.Component {
@@ -72,11 +72,18 @@ class Container extends React.Component {
           {this.state.data.map(({ categories, id, ...props }) => (
             <div>
               {id === -1 ? (
-                <PastaContainer
-                  onClick={this.handlePastaClick}
-                  {...props}
-                  pastas={categories[0].pastas}
-                ></PastaContainer>
+                <div>
+                  <PastaContainer
+                    onClick={this.handlePastaClick}
+                    {...props}
+                    pastas={categories[0].pastas}
+                  />
+                  <SauceSelection
+                    className="sauce-selection"
+                    sauces={categories[0].sauces}
+                    onClick={this.handleClick}
+                  />
+                </div>
               ) : (
                 <Cateogry
                   onClick={this.handleClick}
@@ -87,6 +94,7 @@ class Container extends React.Component {
             </div>
           ))}
         </div>
+        <BottomControls className="bottom-controls" />
       </div>
     );
   }
