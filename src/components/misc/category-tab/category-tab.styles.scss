@@ -52,7 +52,8 @@
       &.description {
         font-size: 25px;
         margin: 0px 10px 50px 50px;
-        line-height: 20px;
+        line-height: 22px;
+        text-shadow: 0.5px 0.5px black;
 
         @media screen and (max-width: 600px) {
           font-size: 4.5vw;
