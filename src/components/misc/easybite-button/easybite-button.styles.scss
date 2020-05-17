@@ -1,0 +1,19 @@
+.addToCart {
+  font-size: large;
+  background-color: white;
+
+  @media screen and (max-width: 600px) {
+    height: 25px;
+    font-size: small;
+    bottom: 40%;
+  }
+
+  &:active {
+    outline: none;
+    font-weight: bold;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

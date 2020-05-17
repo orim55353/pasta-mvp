@@ -1,8 +1,10 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+
 import "./App.css";
 
+import OrderView from "./components/order-view/order-view.component";
 import Container from "./components/container/container.component";
-import MENU_DATA from "./menu-data";
 
 class App extends React.Component {
   constructor() {
@@ -13,8 +15,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <Container className="container" data={MENU_DATA}></Container>
+      <div className="app">
+        <Switch>
+          <Route exact path="/" component={Container} />
+          <Route path="/order" component={OrderView} />
+        </Switch>
       </div>
     );
   }

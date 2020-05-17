@@ -6,6 +6,9 @@ import "./pasta-container.styles.scss";
 import Title from "../title/title.component";
 import PastaKind from "../pasta-kind/pasta-kind.component";
 
+import { connect } from "react-redux";
+import { choosePasta } from "../../redux/pasta/pasta.actions";
+
 class PastContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +21,7 @@ class PastContainer extends React.Component {
 
   handleClick(id) {
     this.setState({ selectedPastaId: id });
+    this.props.choosePasta(id);
   }
 
   render() {
@@ -31,7 +35,7 @@ class PastContainer extends React.Component {
           </div>
           <div className="pastaContainer">
             {this.props.pastas.map(({ id, ...props }) => (
-              <div onClick={() => this.handleClick(id)}>
+              <div key={id} onClick={() => this.handleClick(id)}>
                 <PastaKind
                   {...props}
                   id={id}
@@ -46,4 +50,8 @@ class PastContainer extends React.Component {
   }
 }
 
-export default PastContainer;
+const mapDispatchToProps = (dispatch) => ({
+  choosePasta: (pastaId) => dispatch(choosePasta(pastaId)),
+});
+
+export default connect(null, mapDispatchToProps)(PastContainer);

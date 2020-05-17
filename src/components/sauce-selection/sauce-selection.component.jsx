@@ -13,8 +13,12 @@ const SauceSelection = ({ sauces, onClick }) => (
         <span className="description">בוחרים את הרוטב</span>
       </div>
       <div className="data">
-        {sauces.map(({ ...dishProps }) => (
-          <div className="sauce" onClick={() => onClick({ dishProps })}>
+        {sauces.map(({ id, ...dishProps }) => (
+          <div
+            key={id}
+            className="sauce"
+            onClick={() => onClick({ dishProps })}
+          >
             <TableDish {...dishProps}></TableDish>
           </div>
         ))}

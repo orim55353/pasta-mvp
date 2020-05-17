@@ -9,12 +9,17 @@
 
   .dishView {
     width: 95%;
-    height: 95%;
+    height: 86%;
     z-index: 1;
 
     margin-top: 20px;
-    border-radius: 15px;
+    border-radius: 15px 15px 0px 0px;
     border: 1px solid white;
+
+    @media screen and (max-width: 600px) {
+      border-radius: 15px;
+      height: 100%;
+    }
 
     background-image: url(../../Assets/chalk_bg.jpg);
     background-size: cover;
@@ -23,6 +28,14 @@
 
     overflow-y: auto;
     overflow-x: hidden;
+
+    &.hide {
+      display: none;
+    }
+
+    &.show {
+      display: block;
+    }
 
     &::-webkit-scrollbar {
       display: none;
@@ -34,9 +47,12 @@
       position: relative;
       height: 50%;
       width: 100%;
+      border-bottom: 2px solid white;
 
       @media screen and (max-width: 600px) {
+        display: flex;
         flex-direction: column;
+        justify-content: space-between;
       }
 
       .addToCart {
@@ -47,26 +63,11 @@
 
         height: 40px;
         width: fit-content;
-
-        font-size: large;
-        background-color: white;
+        min-width: 140px;
         border: none;
         border-radius: 15px 0px 0px 0px;
 
-        @media screen and (max-width: 600px) {
-          height: 25px;
-          font-size: small;
-          bottom: 40%;
-        }
-
-        &:active {
-          outline: none;
-          font-weight: bold;
-        }
-
-        &:focus {
-          outline: none;
-        }
+        font-size: 20px;
       }
 
       .closeDish {
@@ -95,6 +96,8 @@
           height: 15px;
           width: 15px;
           margin: 10px;
+          position: absolute;
+          top: 10px;
         }
 
         &:hover {
@@ -104,12 +107,11 @@
 
       .dishImg {
         height: 100%;
-        width: 55%;
-        border-radius: 0px 0px 0px 15px;
+        width: 50%;
 
         @media screen and (max-width: 600px) {
           width: 100%;
-          height: 60%;
+          height: 50%;
           position: absolute;
           top: 0;
           border-radius: 0;
@@ -125,19 +127,28 @@
         margin: 10px 10px 0px 10px;
 
         @media screen and (max-width: 600px) {
-          align-self: center;
+          align-self: flex-end;
           width: 95%;
-          margin: 0px;
           height: 37%;
           position: absolute;
-          bottom: 0;
+          top: 52%;
+          margin: 0px;
+        }
+
+        span {
+          margin-right: 5px;
+          overflow: hidden;
         }
 
         .rating {
-          font-size: large;
+          font-size: 30px;
           margin-right: 10px;
           position: absolute;
           bottom: 0;
+
+          @media screen and (max-width: 600px) {
+            left: 0;
+          }
 
           span {
             font-size: 2.5vw;

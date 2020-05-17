@@ -12,6 +12,7 @@
   border-bottom: none;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   color: white;
 
   button {
@@ -40,6 +41,8 @@
     justify-content: space-evenly;
     width: auto;
     height: 100%;
+    color: white;
+    text-decoration: none;
 
     .cart-icon {
       width: auto;

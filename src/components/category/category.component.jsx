@@ -27,9 +27,9 @@ class Category extends React.Component {
           <Title title={this.state.name} img={this.state.img}></Title>
         </Fade>
         {this.state.categories.map(({ name, description, dishes, id }) => (
-          <div className="dishesContainer">
+          <div key={id} className="dishesContainer">
             {id !== -1 ? (
-              <Fade>
+              <Fade key={id}>
                 <CategoryTab
                   name={name}
                   description={description}
@@ -38,13 +38,14 @@ class Category extends React.Component {
                 ></CategoryTab>
               </Fade>
             ) : null}
-            {dishes.map(({ ...dishProps }) => (
-              <Fade>
+            {dishes.map(({ id, ...dishProps }) => (
+              <Fade key={id}>
                 <div
+                  key={id}
                   className="dish"
                   onClick={() => this.state.handleClick({ dishProps })}
                 >
-                  <TableDish {...dishProps}></TableDish>
+                  <TableDish {...dishProps} isOrder={false}></TableDish>
                 </div>
               </Fade>
             ))}

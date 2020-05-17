@@ -1,0 +1,156 @@
+.adding-to-cart {
+  width: 95%;
+  height: 86%;
+  z-index: 1;
+
+  margin-top: 20px;
+  border-radius: 15px 15px 0px 0px;
+  border: 1px solid white;
+
+  background-image: url(../../../Assets/chalk_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+  position: relative;
+
+  color: white;
+
+  &.hide {
+    display: none;
+  }
+
+  &.show {
+    display: flex;
+  }
+
+  .back-btn {
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  .info {
+    display: flex;
+    color: white;
+    margin: 25px 40px;
+    margin-top: 0px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+
+    span {
+      border-bottom: none;
+      font-size: 40px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 25px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      margin: 10px 20px;
+    }
+  }
+
+  .comments {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0px 40px 0px 40px;
+
+    @media screen and (max-width: 600px) {
+      margin: 0px 20px 0px 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      text-align: right;
+      direction: rtl;
+      font-size: 20px;
+      border-radius: 10px;
+      padding-top: 5px;
+      padding-right: 5px;
+      resize: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      @media screen and (max-width: 600px) {
+        font-size: 17px;
+      }
+    }
+  }
+
+  span {
+    margin-bottom: 10px;
+    font-size: 25px;
+    border-bottom: 1px solid white;
+
+    @media screen and (max-width: 600px) {
+      font-size: 17px;
+    }
+  }
+
+  .extras {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 20px 40px;
+
+    @media screen and (max-width: 600px) {
+      margin: 10px 20px;
+    }
+
+    .extrasContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      justify-items: center;
+      width: 95%;
+
+      span {
+        border-bottom: none;
+      }
+
+      @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  .addToCart {
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    align-self: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 17px;
+    }
+  }
+}

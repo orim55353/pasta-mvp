@@ -1,0 +1,49 @@
+.extra {
+  display: flex;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 10vw;
+  height: 8vw;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 10px;
+  position: relative;
+  color: white;
+
+  &.active {
+    border-color: #f69d29;
+    color: #f69d29;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 25vw;
+    height: 20vw;
+    margin-top: 5px;
+    padding: 5px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5px;
+    text-align: center;
+
+    span {
+      text-shadow: 1px 1px black;
+      font-size: 2.4vw;
+      font-family: "SecelyMF";
+      line-height: 30px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 5vw;
+        line-height: 120%;
+      }
+    }
+  }
+}

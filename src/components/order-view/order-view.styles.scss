@@ -1,0 +1,28 @@
+.order-empty {
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    color: white;
+    font-size: 75px;
+  }
+}
+
+.order-view {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    align-self: flex-end;
+    padding-right: 30px;
+    color: white;
+    font-size: 55px;
+  }
+
+  span.price {
+    color: white;
+    font-size: 35px;
+    align-self: flex-end;
+    padding-right: 30px;
+  }
+}
