@@ -12,8 +12,8 @@ body {
 }
 
 @font-face {
-  font-family: Secely;
-  src: local("SecelyMF"), url(./Assets/fonts/secelyrg.TTF) format("truetype");
+  font-family: Ori;
+  src: url(./Assets/fonts/ori.otf) format("truetype");
 }
 
 * {

@@ -5,6 +5,11 @@
   width: 100vw;
   height: 20vh;
   margin-top: 20px;
+  position: relative;
+
+  @media screen and (max-width: 600px) {
+    height: 15vh;
+  }
 
   &:first-child {
     margin-top: 0px;
@@ -17,14 +22,16 @@
   }
 
   span {
-    font-family: Secely;
+    font-family: Ori;
     position: absolute;
     color: white;
-    font-size: 100px;
+    font-size: 8.5vw;
     text-shadow: 1px 1px black;
+    bottom: 2vh;
 
     @media screen and (max-width: 600px) {
       font-size: 20vw;
+      bottom: 15px;
     }
   }
 }
