@@ -29,8 +29,11 @@ class Dish extends React.Component {
     this.setState({ addedToCart: true });
   }
 
-  handleBack() {
+  handleBack(didClose) {
     this.setState({ addedToCart: false });
+    if (didClose === true) {
+      this.props.closeDish();
+    }
   }
 
   componentDidMount() {

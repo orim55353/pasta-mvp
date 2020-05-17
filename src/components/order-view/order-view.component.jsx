@@ -28,6 +28,7 @@ class OrderView extends React.Component {
             ))}
           </div>
           <span className="price">מחיר כולל: {totalPrice}₪</span>
+          <BottomControls className="bottom-controls" />
         </div>
       );
     }

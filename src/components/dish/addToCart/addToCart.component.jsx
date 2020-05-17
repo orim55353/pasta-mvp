@@ -21,6 +21,7 @@ class AddToCart extends React.Component {
     };
 
     this.handleCommentChange = this.handleCommentChange.bind(this);
+    this.handleAddDish = this.handleAddDish.bind(this);
   }
 
   handleCommentChange(event) {
@@ -37,11 +38,17 @@ class AddToCart extends React.Component {
     }
   }
 
+  handleAddDish() {
+    this.props.addItem({ ...this.state });
+    alert("המנה הוספה להזמנתך, בתיאבון!");
+    this.props.handleBack(true);
+  }
+
   render() {
-    const { show, dish, addItem, handleBack } = this.props;
+    const { show, dish, handleBack } = this.props;
     return (
       <div className={`${show === false ? "hide" : "show"} adding-to-cart`}>
-        <button className="back-btn" onClick={() => handleBack()}>
+        <button className="back-btn" onClick={() => handleBack(false)}>
           <ArrowBackIcon className="icon"></ArrowBackIcon>
         </button>
         <div className="info">
@@ -74,7 +81,7 @@ class AddToCart extends React.Component {
         </div>
         <EasybiteButton
           className="addToCart"
-          onClick={() => addItem({ ...this.state })}
+          onClick={() => this.handleAddDish()}
         >
           הוסף לחשבון
         </EasybiteButton>

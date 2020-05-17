@@ -4,7 +4,7 @@ import { addItemToOrder } from "./order.utils";
 import { getTotalPrice } from "./order.utils";
 
 const INITAL_STATE = {
-  id: 0,
+  id: Math.floor(1000 + Math.random() * 9000),
   dishes: [],
   drinks: [],
   totalPrice: 0,
@@ -16,7 +16,6 @@ const orderReducer = (state = INITAL_STATE, action) => {
     case OrderActionTypes.ADD_DISH:
       return {
         ...state,
-        id: Math.floor(1000 + Math.random() * 9000),
         dishes: addItemToOrder(state.dishes, action.payload),
       };
 
