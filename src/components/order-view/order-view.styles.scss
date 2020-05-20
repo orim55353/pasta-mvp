@@ -5,24 +5,77 @@
   h1 {
     color: white;
     font-size: 75px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 45px;
+    }
   }
 }
 
-.order-view {
-  display: flex;
-  flex-direction: column;
-
-  h1 {
-    align-self: flex-end;
-    padding-right: 30px;
-    color: white;
-    font-size: 55px;
+.ordersContainer {
+  .editDish {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
   }
 
-  span.price {
-    color: white;
-    font-size: 35px;
-    align-self: flex-end;
-    padding-right: 30px;
+  .order-view {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:last-child {
+      margin-bottom: 110px;
+    }
+
+    h1 {
+      padding-right: 30px;
+      color: white;
+      font-size: 55px;
+      margin-bottom: -10px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 45px;
+        padding-right: 5px;
+      }
+    }
+
+    span.totalPrice {
+      color: white;
+      font-size: 45px;
+      margin: 30px 70px 0px 20px;
+    }
+
+    .acceptOrder {
+      width: 20%;
+      padding: 10px;
+      border-radius: 10px;
+      align-self: center;
+      font-size: 35px;
+      margin-bottom: 40px;
+      margin-top: 50px;
+      direction: rtl;
+      background-color: white;
+
+      @media screen and (max-width: 600px) {
+        width: 50%;
+        font-size: 25px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        outline: none;
+        font-weight: bolder;
+      }
+    }
   }
 }

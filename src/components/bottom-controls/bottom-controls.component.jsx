@@ -14,9 +14,6 @@ const BottomControls = ({ dishes }) => (
     <Link className="back" to="/">
       <button>חזור לתפריט</button>
     </Link>
-
-    <button>עבור לשלב הבא</button>
-
     <Link className="cart" to="/order">
       <div className="cart">
         <CartIcon className="cart-icon"></CartIcon>

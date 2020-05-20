@@ -5,6 +5,7 @@ import "./container.styles.scss";
 
 import { connect } from "react-redux";
 import { setData, setExtras } from "../../redux/menu/menu.action";
+import { setOrderExtras } from "../../redux/order/order.action";
 
 import Cateogry from "../category/category.component";
 import Dish from "../dish/dish.component";
@@ -38,7 +39,8 @@ class Container extends React.Component {
         data["description"],
         data["price"],
         data["rating"],
-        data["imageUrl"]
+        data["imageUrl"],
+        data["id"]
       );
 
       return null;
@@ -57,7 +59,8 @@ class Container extends React.Component {
           data["description"],
           data["price"],
           data["rating"],
-          data["imageUrl"]
+          data["imageUrl"],
+          data["id"]
         );
 
         return null;
@@ -80,6 +83,7 @@ class Container extends React.Component {
     ref.on("value", (snapshot) => {
       this.props.setData(snapshot.val().sections);
       this.props.setExtras(snapshot.val().extras);
+      this.props.setOrderExtras(snapshot.val().extras);
       this.forceUpdate();
     });
   }
@@ -159,6 +163,7 @@ const mapStateToProps = ({ pasta: { chosen_pasta }, menu: { sections } }) => ({
 const mapDispatchToProps = (dispatch) => ({
   setData: (data) => dispatch(setData(data)),
   setExtras: (extras) => dispatch(setExtras(extras)),
+  setOrderExtras: (extras) => dispatch(setOrderExtras(extras)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Container);

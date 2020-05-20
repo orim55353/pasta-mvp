@@ -1,19 +1,24 @@
-.addToCart {
-  font-size: large;
-  background-color: white;
+.containerDiv {
+  display: flex;
 
-  @media screen and (max-width: 600px) {
-    height: 25px;
-    font-size: small;
-    bottom: 40%;
-  }
+  background-color: red;
+  .addToCart {
+    font-size: large;
+    background-color: white;
 
-  &:active {
-    outline: none;
-    font-weight: bold;
-  }
+    @media screen and (max-width: 600px) {
+      height: 35px;
+      font-size: 25px;
+      bottom: 40%;
+    }
 
-  &:focus {
-    outline: none;
+    &:active {
+      outline: none;
+      font-weight: bold;
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 }

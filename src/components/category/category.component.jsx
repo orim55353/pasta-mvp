@@ -38,10 +38,10 @@ class Category extends React.Component {
                 ></CategoryTab>
               </Fade>
             ) : null}
-            {dishes.map(({ id, ...dishProps }) => (
-              <Fade key={id}>
+            {dishes.map(({ ...dishProps }) => (
+              <Fade key={dishProps.id}>
                 <div
-                  key={id}
+                  key={dishProps.id}
                   className="dish"
                   onClick={() => this.state.handleClick({ dishProps })}
                 >

@@ -163,7 +163,7 @@
         span {
           color: white;
           direction: rtl;
-          font-size: 3.75vw;
+          font-size: 4vw;
 
           &.name {
             font-weight: bold;
@@ -175,9 +175,9 @@
           }
 
           &.price {
-            font-size: 2.5vw;
+            font-size: 2.7vw;
             align-self: flex-start;
-            top: 3vh;
+            top: 2vh;
             position: absolute;
 
             @media screen and (max-width: 600px) {

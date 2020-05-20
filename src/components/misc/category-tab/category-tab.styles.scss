@@ -1,9 +1,10 @@
 .main {
   width: 100%;
-  height: 120px;
+  height: 16vh;
   display: flex;
   margin-top: 30px;
   margin-bottom: 15px;
+  position: relative;
 
   @media screen and (max-width: 600px) {
     margin-top: 20px;
@@ -14,8 +15,8 @@
     flex-direction: column;
     align-items: center;
     background-color: #ff9c2a;
-    width: 55vw;
-    height: 120px;
+    width: 50%;
+    height: 100%;
     position: absolute;
 
     @media screen and (max-width: 600px) {
@@ -39,8 +40,8 @@
       text-align: center;
 
       &.category {
-        font-size: 65px;
-        margin: -10px 5px 0px 0px;
+        font-size: 3.9em;
+        margin: -5px 5px 0.2vh 0px;
         text-shadow: 1px 1px black;
 
         @media screen and (max-width: 600px) {
@@ -50,9 +51,9 @@
       }
 
       &.description {
-        font-size: 25px;
+        font-size: 1.5vw;
         margin: 0px 10px 50px 50px;
-        line-height: 22px;
+        line-height: 2.7vh;
         text-shadow: 0.5px 0.5px black;
 
         @media screen and (max-width: 600px) {

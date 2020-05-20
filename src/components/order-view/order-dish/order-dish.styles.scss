@@ -1,0 +1,185 @@
+.orderDish {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  margin: 40px 70px 20px 20px;
+  position: relative;
+  height: 20vh;
+  width: 100vw;
+
+  &.hide {
+    display: none;
+  }
+
+  &.show {
+    display: flex;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 20px 10px 0px 0px;
+  }
+
+  .image {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px 10px 0px 0px;
+      object-fit: cover;
+
+      @media screen and (max-width: 600px) {
+        width: 14vh;
+        height: 14vh;
+      }
+    }
+
+    .delete-btn {
+      background-color: red;
+      font-size: medium;
+      border: none;
+      position: absolute;
+      border-radius: 0px 0px 10px 10px;
+      height: 20px;
+      width: 100%;
+      top: 140px;
+
+      @media screen and (max-width: 600px) {
+        top: 14vh;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        outline: none;
+        font-weight: bolder;
+      }
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 65vw;
+
+    span {
+      color: white;
+      direction: rtl;
+      width: 90%;
+      margin-right: 10px;
+      line-height: 19px;
+
+      &.name {
+        font-size: 3vw;
+        font-weight: bold;
+        text-decoration: underline;
+
+        @media screen and (max-width: 600px) {
+          font-size: 6.5vw;
+        }
+      }
+
+      &.description {
+        margin-top: 2.5vh;
+        font-size: 2vw;
+        margin-bottom: 5px;
+        line-height: 22px;
+
+        @media screen and (max-width: 600px) {
+          font-size: 5vw;
+          margin-top: 10px;
+        }
+      }
+
+      &.comment {
+        font-size: 1.6vw;
+        text-decoration: underline;
+        width: auto;
+
+        @media screen and (max-width: 600px) {
+          font-size: 4.6vw;
+        }
+      }
+
+      &.extras {
+        font-size: 1.6vw;
+        text-decoration: underline;
+        width: auto;
+        margin-bottom: 1.2vh;
+        margin-top: 1.5vh;
+
+        @media screen and (max-width: 600px) {
+          font-size: 4.6vw;
+        }
+      }
+    }
+  }
+
+  .prices {
+    position: absolute;
+    left: 10%;
+    top: 0;
+    color: white;
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 600px) {
+      left: 5%;
+    }
+
+    .price {
+      margin: 0px 5px;
+      font-size: 35px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 7vw;
+      }
+    }
+
+    .extrasPrice {
+      margin: 0px 5px;
+      font-size: 20px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 4vw;
+      }
+    }
+  }
+
+  .edit {
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    font-size: 17px;
+    background-color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    width: 5em;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      outline: none;
+      font-weight: bolder;
+    }
+
+    @media screen and (max-width: 600px) {
+      right: 15px;
+      left: auto;
+    }
+  }
+}

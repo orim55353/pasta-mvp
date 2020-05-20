@@ -141,16 +141,21 @@
   }
 
   .addToCart {
-    width: 40%;
-    height: 40px;
+    width: 30vw;
+    padding: 10px;
     border-radius: 10px;
-    align-self: center;
     font-size: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     margin-top: 50px;
+    position: absolute;
+    right: 35vw;
 
     @media screen and (max-width: 600px) {
-      font-size: 17px;
+      width: 50vw;
+      height: 40px;
+      font-size: 25px;
+      right: 22vw;
+      bottom: 0;
     }
   }
 }
