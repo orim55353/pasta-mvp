@@ -1,12 +1,16 @@
 import React from "react";
 
+import "./order-view.styles.scss";
+
 import { connect } from "react-redux";
 
 import OrderDish from "./order-dish/order-dish.component";
 import BottomControls from "../bottom-controls/bottom-controls.component";
 import AddToCart from "../dish/addToCart/addToCart.component";
 
-import "./order-view.styles.scss";
+import { db } from "../../firebase/firebase.utils";
+
+import moment from "moment";
 
 class OrderView extends React.Component {
   constructor() {
@@ -25,9 +29,39 @@ class OrderView extends React.Component {
   }
 
   handleAcceptOrder() {
-    console.log(this.props.dishes);
-    window.localStorage.clear();
-    window.location.reload();
+    var dishes = [];
+
+    this.props.dishes.forEach((dish) => {
+      var dishData = [];
+      dishData["name"] = dish.dish.name;
+      dishData["comment"] = dish.comment;
+      dishData["extras"] = dish.extras;
+
+      dishes.push(dishData);
+    });
+
+    const ref = db.ref("menu/orders/" + this.props.id);
+
+    ref.set({
+      dishes: dishes,
+      status: "הזמנה נשלחה",
+      type: "משלוח",
+      date: moment(new Date()).format("HH:mm"),
+      price: this.props.totalPrice,
+    });
+
+    db.ref("menu/orders")
+      .once("value")
+      .then(function (snapshot) {
+        db.ref("menu/orders")
+          .update({
+            todayCount: snapshot.val().todayCount + 1,
+          })
+          .then(function () {
+            window.localStorage.clear();
+            window.location.reload();
+          });
+      });
   }
 
   handleEditDish(dish, comment, extras) {
@@ -48,8 +82,23 @@ class OrderView extends React.Component {
     });
   }
 
+  getTotalPrice() {
+    var totalPrice = 0;
+
+    this.props.dishes.forEach((dish) => {
+      totalPrice += dish.dish.price;
+      this.props.menuExtras.map((extra) => {
+        if (dish.extras.includes(extra.id)) {
+          totalPrice += extra.price;
+        }
+      });
+    });
+
+    return totalPrice;
+  }
+
   render() {
-    const { dishes, totalPrice, id } = this.props;
+    const { dishes, id } = this.props;
 
     if (dishes.length === 0) {
       return (
@@ -90,7 +139,9 @@ class OrderView extends React.Component {
                   ></OrderDish>
                 ))}
               </div>
-              <span className="totalPrice">מחיר כולל: {totalPrice}₪</span>
+              <span className="totalPrice">
+                מחיר כולל: {this.getTotalPrice()}₪
+              </span>
               <button
                 className="acceptOrder"
                 onClick={() => this.handleAcceptOrder()}
@@ -107,9 +158,9 @@ class OrderView extends React.Component {
   }
 }
 
-const mapStateToProps = ({ order: { dishes, totalPrice, id } }) => ({
+const mapStateToProps = ({ order: { dishes, menuExtras, id } }) => ({
   dishes,
-  totalPrice,
+  menuExtras,
   id,
 });
 

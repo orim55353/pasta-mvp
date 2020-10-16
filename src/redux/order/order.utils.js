@@ -15,20 +15,3 @@ export const updateDish = (items, itemToUpdate) => {
 
   return items;
 };
-
-export const getTotalPrice = (dishes, extras) => {
-  var totalPrice = 0;
-
-  dishes.forEach((dish) => {
-    totalPrice += dish.dish.price;
-    extras.map((extra) => {
-      if (dish.extras.includes(extra.id)) {
-        totalPrice += extra.price;
-      }
-    });
-  });
-
-  console.log(totalPrice, "price");
-
-  return totalPrice;
-};

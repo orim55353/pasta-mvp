@@ -9,8 +9,6 @@ import { ReactComponent as CartIcon } from "../../Assets/cart.svg";
 
 const BottomControls = ({ dishes }) => (
   <div className="bottom-controls">
-    <button>המומלצים</button>
-    <button>צור שולחן חדש</button>
     <Link className="back" to="/">
       <button>חזור לתפריט</button>
     </Link>

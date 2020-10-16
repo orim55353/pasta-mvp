@@ -1,17 +1,11 @@
 import OrderActionTypes from "./order.types";
 
-import {
-  addItemToOrder,
-  updateDish,
-  deleteDish,
-  getTotalPrice,
-} from "./order.utils";
+import { addItemToOrder, updateDish, deleteDish } from "./order.utils";
 
 const INITAL_STATE = {
   id: Math.floor(1000 + Math.random() * 9000),
   dishes: [],
   drinks: [],
-  totalPrice: 0,
   customer: "default",
   menuExtras: [],
 };
@@ -22,21 +16,18 @@ const orderReducer = (state = INITAL_STATE, action) => {
       return {
         ...state,
         dishes: addItemToOrder(state.dishes, action.payload),
-        totalPrice: getTotalPrice(state.dishes, state.menuExtras),
       };
 
     case OrderActionTypes.UPDATE_DISH:
       return {
         ...state,
         dishes: updateDish(state.dishes, action.payload),
-        totalPrice: getTotalPrice(state.dishes, state.menuExtras),
       };
 
     case OrderActionTypes.DELETE_DISH:
       return {
         ...state,
         dishes: deleteDish(state.dishes, action.payload),
-        totalPrice: getTotalPrice(state.dishes, state.menuExtras),
       };
 
     case OrderActionTypes.SET_EXTRAS:
